@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/farmers-choice.iml" filepath="$PROJECT_DIR$/.idea/modules/farmers-choice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/farmers-choice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/farmers-choice.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/farmers-choice.test.iml" filepath="$PROJECT_DIR$/.idea/modules/farmers-choice.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Farmers.iml" filepath="$PROJECT_DIR$/.idea/modules/Farmers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Farmers.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Farmers.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Farmers.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Farmers.test.iml" />
     </modules>
   </component>
 </project>
