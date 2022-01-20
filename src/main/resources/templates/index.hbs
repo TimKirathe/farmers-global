@@ -5,6 +5,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after {
             margin: 0;
@@ -71,9 +74,47 @@
             gap: 1rem;
             justify-content: center;
         }
+
+        nav {
+            height: 90px;
+            font-size: 1.8rem;
+        }
+
+        a.navbar-brand {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            position: relative;
+            left: 5rem;
+        }
     </style>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            FARMERS CHOICE
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Post produce</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">View all farmers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">View all reviews</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
     <div class="reviewsSection">
         <h1 class="text-center">Welcome to Farmers Choice!</h1>
         <p class="text-center">The first of its kind. This website allows you to view and order produce sold by farmers around Kenya. It also allows you to post produce to be sole on the website if you are a farmer.</p>

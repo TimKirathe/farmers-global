@@ -19,7 +19,16 @@ public class sql2oFarmerDao implements farmerDao {
     public void save(Farmer farmer) {
         try(Connection con = sql2o.open()) {
             String sql = "INSERT INTO farmers (name, location, number, produce, amountofproduceinkg, email, priceof1kgofproduce, wallet) VALUES (:name, :location, :number, :produce, :amountofproduceinkg, :email, :priceof1kgofproduce, :wallet)";
-            int id = (int) con.createQuery(sql).bind(farmer).executeUpdate().getKey();
+            int id = (int) con.createQuery(sql).bind(farmer)
+                    .addParameter("name", farmer.getName())
+                    .addParameter("location", farmer.getLocation())
+                    .addParameter("number", farmer.getNumber())
+                    .addParameter("produce", farmer.getProduce())
+                    .addParameter("amountofproduceinkg", farmer.getAmountOfProduceInKg())
+                    .addParameter("email", farmer.getEmail())
+                    .addParameter("priceof1kgofproduce", farmer.getPriceOf1kgOfProduce())
+                    .addParameter("wallet", farmer.getWallet())
+                    .executeUpdate().getKey();
             farmer.setId(id);
         } catch(Sql2oException e) {
             System.out.println(e);

@@ -75,6 +75,10 @@ public class Farmer {
         return produce;
     }
 
+    public int getAmountOfProduceInKg() {
+        return amountOfProduceInKg;
+    }
+
     public int getWallet() {
         return wallet;
     }
