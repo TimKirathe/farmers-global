@@ -22,10 +22,31 @@
 
             body {
                 font-family: 'Nunito', sans-serif;
-                background-color: rgba(72, 201, 176, 0.6);
-                color: green;
+                background: #080808 linear-gradient(rgba(46, 204, 113, 0.6), rgb(232, 248, 245));
             }
 
+            .form-group {
+                font-size: 1.5rem;
+            }
+
+            .form-control {
+                height: 5vh;
+                font-size: 1.5rem;
+            }
+
+            button.btn {
+                font-size: 1.5rem;
+                margin: 1rem;
+                width: 6%;
+            }
+
+            .container {
+                width: 100%;
+                height: 100vh;
+                background-size: cover;
+                background-position: center;
+                margin-top: 8%;
+            }
 
             h1 {
                 font-size: 3rem;
@@ -39,50 +60,106 @@
                 font-size: 1.5rem;
             }
 
-            img {
-                width: 350px;
-                height: 250px;
-            }
-
             nav {
-                height: 90px;
-                font-size: 1.8rem;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100px;
+                padding: 10px 90px;
+                box-sizing: border-box;
+                background: rgb(0, 0, 0, 0.6);
+                border-bottom: 1px solid #fff;
             }
 
-            a.navbar-brand {
-                font-family: 'Dancing Script', cursive;
-                font-size: 2.5rem;
-                position: relative;
-                left: 5rem;
+            nav .menu {
+                padding: 22px 20px;
+                height: 80px;
+                float: left;
+                font-size: 24px;
+                font-weight: bold;
+                text-transform: uppercase;
+                color: #fff;
             }
+
+            nav ul {
+                list-style: none;
+                float: right;
+                margin: 0;
+                padding: 0;
+                display: flex;
+            }
+
+            nav ul li a {
+                line-height: 80px;
+                color: #fff;
+                padding: 12px 30px;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            nav ul li a:hover {
+                background: rgb(0, 0, 0, 0.7);
+                border-radius: 6px;
+            }
+
+            @media (max-width: 800px) {
+                .container {
+                    width: 50%;
+                    margin: auto;
+                }
+            }
+
         </style>
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                FARMERS CHOICE
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Post produce</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">View all farmers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">View all reviews</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <nav class="menu">
+
+        <ul>
+
+            <li><a href="/">Home</a></li>
+            <li><a href="/farmers/new">Post some produce</a></li>
+            <li><a href="/farmers">Farmers</a></li>
+            <li><a href="/reviews/new">Post a Review</a></li>
+            <li><a href="/reviews">All Reviews</a></li>
+
+        </ul>
     </nav>
+    <div class="container">
+        <h1 class="text-center">POST SOME PRODUCE</h1>
+        <form method="post" action="/farmers/new">
+            <div class="form-group">
+                <label for="name">Enter Your Name: </label>
+                <input class="form-control" type="text" id="name" name="name" required/>
+            </div>
+            <div class="form-group">
+                <label for="location">Enter Your Location: </label>
+                <input class="form-control" type="text" id="location" name="location" required/>
+            </div>
+            <div class="form-group">
+                <label for="number">Enter Your Number: </label>
+                <input class="form-control" type="text" id="number" name="number" required/>
+            </div>
+            <div class="form-group">
+                <label for="produce">Enter The Produce To Be Sold: </label>
+                <input class="form-control" type="text" id="produce" name="produce" required/>
+            </div>
+            <div class="form-group">
+                <label for="amountOfProduce">Enter The Amount Of Produce(In Kg): </label>
+                <input class="form-control" type="text" id=amountOfProduce" name="amountOfProduce" required/>
+            </div>
+            <div class="form-group">
+                <label for="price">Enter The Price(Per Kg) in Ksh: </label>
+                <input class="form-control" type="text" id="price" name="price" required/>
+            </div>
+            <div class="form-group">
+                <label for="email">Enter Your Email: </label>
+                <input class="form-control" type="text" id="email" name="email" required/>
+            </div>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+    </div>
     </body>
 </html>
