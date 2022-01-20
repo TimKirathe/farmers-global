@@ -9,5 +9,5 @@ CREATE TABLE reviews (
     id SERIAL PRIMARY KEY, farmername varchar, writtenby varchar, content varchar, rating int
 );
 
--- CREATE DATABASE farmer_global_test WITH TEMPLATE farmer_global;
+CREATE DATABASE farmer_global_test WITH TEMPLATE farmer_global;
 
