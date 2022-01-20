@@ -20,7 +20,7 @@ class sql2oFarmerDaoTest {
     @BeforeAll
     static void setUp() {
         String connectionString = "jdbc:postgresql://localhost:5432/farmer_global_test";
-        Sql2o sql2o = new Sql2o(connectionString, null, null);
+        Sql2o sql2o = new Sql2o(connectionString, "adamu", "Adamu");
         sql2oFarmerDao = new sql2oFarmerDao(sql2o);
         conn = sql2o.open();
     }

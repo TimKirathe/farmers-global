@@ -13,10 +13,21 @@ import static spark.Spark.*;
 
 public class App {
 
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
+
     public static void main(String[] args) {
 
-        String connectionString = "jdbc:postgresql://localhost:5432/farmer_global";
-        Sql2o sql2o = new Sql2o(connectionString, null, null);
+        port(getHerokuAssignedPort());
+
+
+        String connectionString = "jdbc:postgresql://ec2-54-196-105-177.compute-1.amazonaws.com:5432/ddtv2d9pbpb290";
+        Sql2o sql2o = new Sql2o(connectionString, "dbxrkndpqmrttb", "6ff0f8cad184ea22c46839cf56e7ecacbe18a921129df6b07e25a894b9ac54ea");
 
         Sql2oReviewDao sql2oReviewDao = new Sql2oReviewDao(sql2o);
         sql2oFarmerDao sql2oFarmerDao = new sql2oFarmerDao(sql2o);
