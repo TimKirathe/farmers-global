@@ -61,7 +61,7 @@ class ReviewTest {
 
     // helper
     public Review setupReview (){
-        return new Review("Great service", 4, "Kim", "Adamu");
+        return new Review("Kim", 4, "Great service", "Adamu");
     }
 
 }

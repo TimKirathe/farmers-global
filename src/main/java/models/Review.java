@@ -8,14 +8,12 @@ public class Review {
     private int id;
     private int rating;
     private String farmername;
-    private long createdat;
 
     public Review(String writtenBy, int rating, String content, String farmername) {
         this.writtenBy = writtenBy;
         this.rating = rating;
         this.content = content;
         this.farmername = farmername;
-        this.createdat = System.currentTimeMillis();
 
     }
 
@@ -59,25 +57,16 @@ public class Review {
         this.farmername = farmername;
     }
 
-    public long getCreatedat() {
-        return createdat;
-    }
-
-    public void setCreatedat(long createdat) {
-        this.createdat = createdat;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Review review = (Review) o;
-        return id == review.id && rating == review.rating && createdat == review.createdat && content.equals(review.content) && writtenBy.equals(review.writtenBy) && farmername.equals(review.farmername);
+        return id == review.id && rating == review.rating && content.equals(review.content) && writtenBy.equals(review.writtenBy) && farmername.equals(review.farmername);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(content, writtenBy, id, rating, farmername, createdat);
+        return Objects.hash(content, writtenBy, id, rating, farmername);
     }
-
 }
