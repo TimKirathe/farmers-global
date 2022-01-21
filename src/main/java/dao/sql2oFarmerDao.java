@@ -18,7 +18,7 @@ public class sql2oFarmerDao implements farmerDao {
     @Override
     public void save(Farmer farmer) {
         try(Connection con = sql2o.open()) {
-            String sql = "INSERT INTO farmers (name, location, number, produce, amountofproduceinkg, email, priceof1kgofproduce, wallet) VALUES (:name, :location, :number, :produce, :amountofproduceinkg, :email, :priceof1kgofproduce, :wallet)";
+            String sql = "INSERT INTO farmers (name, location, number, produce, amountofproduceinkg, email, priceof1kgofproduce, photolink) VALUES (:name, :location, :number, :produce, :amountofproduceinkg, :email, :priceof1kgofproduce, :photoLink)";
             int id = (int) con.createQuery(sql).bind(farmer)
                     .addParameter("name", farmer.getName())
                     .addParameter("location", farmer.getLocation())
@@ -27,7 +27,7 @@ public class sql2oFarmerDao implements farmerDao {
                     .addParameter("amountofproduceinkg", farmer.getAmountOfProduceInKg())
                     .addParameter("email", farmer.getEmail())
                     .addParameter("priceof1kgofproduce", farmer.getPriceOf1kgOfProduce())
-                    .addParameter("wallet", farmer.getWallet())
+                    .addParameter("photoLink", farmer.getPhotoLink())
                     .executeUpdate().getKey();
             farmer.setId(id);
         } catch(Sql2oException e) {

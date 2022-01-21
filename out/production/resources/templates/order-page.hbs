@@ -109,6 +109,10 @@
             font-size: 2rem;
         }
 
+        .producePhoto {
+            display: block;
+        }
+
         @media (max-width: 800px) {
             .container {
                 width: 50%;
@@ -137,6 +141,7 @@
         <p><em>Farmers Name:</em> {{farmer.name}}</p>
         <p><em>Farmers Location:</em> {{farmer.location}}</p>
         <p><em>Produce Sold:</em> {{farmer.produce}}</p>
+        <img src="{{farmer.photoLink}}" alt="photo of produce" height="110" width="200" class="producePhoto" />
         <p><em>Amount of Produce:</em> {{farmer.amountOfProduceInKg}}kg</p>
         <p><em>Price Of Produce:</em> {{farmer.priceOf1kgOfProduce}}Ksh</p>
         <p><em>Farmers Email:</em> {{farmer.email}}</p>

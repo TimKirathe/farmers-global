@@ -11,9 +11,11 @@ public class Farmer {
     private String email;
     private int priceOf1kgOfProduce;
     private int id;
-    private int wallet;
+    private String photoLink;
 
-    public Farmer(String name, String location, String number, String produce, int amountOfProduceInKg, int priceOf1kgOfProduce) {
+
+
+    public Farmer(String name, String location, String number, String produce, int amountOfProduceInKg, int priceOf1kgOfProduce, String photoLink) {
         this.name = name;
         this.location = location;
         this.number = number;
@@ -21,10 +23,10 @@ public class Farmer {
         this.amountOfProduceInKg = amountOfProduceInKg;
         this.email = "No email available";
         this.priceOf1kgOfProduce = priceOf1kgOfProduce;
-        this.wallet = 0;
+        this.photoLink = photoLink;
     }
 
-    public Farmer(String name, String location, String number, String produce, int amountOfProduceInKg, String email, int priceOfProduce) {
+    public Farmer(String name, String location, String number, String produce, int amountOfProduceInKg, String email, int priceOfProduce, String photoLink) {
         this.name = name;
         this.location = location;
         this.number = number;
@@ -32,7 +34,15 @@ public class Farmer {
         this.amountOfProduceInKg = amountOfProduceInKg;
         this.email = email;
         this.priceOf1kgOfProduce = priceOfProduce;
-        this.wallet = 0;
+        this.photoLink = photoLink;
+    }
+
+    public String getPhotoLink() {
+        return photoLink;
+    }
+
+    public void setPhotoLink(String photoLink) {
+        this.photoLink = photoLink;
     }
 
     public int getId() {
@@ -79,20 +89,5 @@ public class Farmer {
         return amountOfProduceInKg;
     }
 
-    public int getWallet() {
-        return wallet;
-    }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Farmer farmer = (Farmer) o;
-        return amountOfProduceInKg == farmer.amountOfProduceInKg && priceOf1kgOfProduce == farmer.priceOf1kgOfProduce && id == farmer.id && wallet == farmer.wallet && name.equals(farmer.name) && location.equals(farmer.location) && number.equals(farmer.number) && produce.equals(farmer.produce) && email.equals(farmer.email);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, location, number, produce, amountOfProduceInKg, email, priceOf1kgOfProduce, id, wallet);
-    }
 }

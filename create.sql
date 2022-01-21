@@ -3,7 +3,7 @@ CREATE DATABASE farmer_global;
 \c farmer_global
 
 CREATE TABLE farmers (
-id SERIAL PRIMARY KEY, name varchar, location varchar, number varchar, produce varchar, amountOfProduceInKg int, email varchar, priceOf1kgOfProduce int, wallet int);
+id SERIAL PRIMARY KEY, name varchar, location varchar, number varchar, produce varchar, amountOfProduceInKg int, email varchar, priceOf1kgOfProduce int, photoLink varchar);
 
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY, farmername varchar, writtenby varchar, content varchar, rating int

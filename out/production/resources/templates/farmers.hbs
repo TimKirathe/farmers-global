@@ -109,6 +109,10 @@
             text-decoration: none;
         }
 
+        .producePhoto {
+            display: block;
+        }
+
         @media (max-width: 800px) {
             .container {
                 width: 50%;
@@ -138,6 +142,8 @@
             <div class="card-body">
                 <p><em>Farmers Name:</em> {{name}}</p>
                 <p><em>Produce Selling:</em> {{produce}}</p>
+                <p><em>Photo of Produce: </em></p>
+                <img src="{{photoLink}}" alt="photo of produce" height="110" width="200" class="producePhoto" />
                 <p><em>Location:</em> {{location}}</p>
                 <p><em>Number:</em> {{number}}</p>
             </div>

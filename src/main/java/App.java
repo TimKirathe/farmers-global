@@ -36,7 +36,8 @@ public class App {
             int amountOfProduce = Integer.parseInt(req.queryParams("amountOfProduce"));
             int price = Integer.parseInt(req.queryParams("price"));
             String email = req.queryParams("email");
-            Farmer newFarmer = new Farmer(name, location, number, produce, amountOfProduce, email, price);
+            String photoLink = req.queryParams("photoLink");
+            Farmer newFarmer = new Farmer(name, location, number, produce, amountOfProduce, email, price, photoLink);
             sql2oFarmerDao.save(newFarmer);
             res.redirect("/farmers");
             return null;
